@@ -4,22 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Millennial Threadz</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Custom embroidery, DTF, screen-print transfers, stickers and banners from Bellflower, CA. Hats, jackets, polos and patches for brands, teams and businesses.">
+<meta property="og:title" content="Millennial Threadz | Custom Embroidery in Bellflower, CA">
+<meta property="og:description" content="Hats, jackets, patches, DTF, stickers and banners for brands, teams and businesses.">
+<meta property="og:image" content="https://millennialthreadz.com/images/work/utv-wrapz-jacket-hoop.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
 <style>
-/* Layout: dark shop-floor page; gold "satin stitch" dashes mark section seams; photo-led hero, then services, process, quote form. */
+/* Dark shop-floor page; gold "satin stitch" dashes mark section seams. */
 :root {
-  --ink: #0f0e0c;        /* page */
-  --panel: #1a1814;      /* raised surfaces */
-  --line: #3a342a;       /* borders */
-  --thread: #d6a93c;     /* gold thread accent */
-  --thread-deep: #a9822a;
-  --cream: #f1ebdd;      /* text */
-  --muted: #a8a08f;      /* secondary text */
-  --error: #ff8a7a;
+  --ink: #0f0e0c; --panel: #1a1814; --line: #3a342a;
+  --thread: #d6a93c; --thread-deep: #a9822a;
+  --cream: #f1ebdd; --muted: #a8a08f; --error: #ff8a7a;
   --f-display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
   --f-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
@@ -28,10 +25,10 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body { background: var(--ink); color: var(--cream); font: 400 17px/1.6 var(--f-body); }
+body { margin: 0; background: var(--ink); color: var(--cream); font: 400 17px/1.6 var(--f-body); }
 a { color: var(--thread); }
 img { max-width: 100%; display: block; }
-.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1180px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
 .eyebrow { font: 500 12px/1 var(--f-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--thread); }
 h1, h2, h3 { font-family: var(--f-display); text-transform: uppercase; line-height: .95; margin: 0; text-wrap: balance; letter-spacing: .01em; }
 h2 { font-size: clamp(40px, 7vw, 64px); font-weight: 800; }
@@ -43,14 +40,18 @@ p { margin: 0; }
 .btn-gold:hover { background: #e6bb52; }
 .btn-ghost { color: var(--cream); background: transparent; }
 .btn-ghost:hover { background: rgba(214,169,60,.12); }
-.btn:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, a:focus-visible { outline: 3px solid var(--cream); outline-offset: 2px; }
+.btn:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, a:focus-visible, button:focus-visible { outline: 3px solid var(--cream); outline-offset: 2px; }
 
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--ink); }
 header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: rgba(15,14,12,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
 header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 12px; }
 .mark { font: 900 22px/1 var(--f-display); text-transform: uppercase; letter-spacing: .04em; color: var(--cream); text-decoration: none; }
 .mark span { color: var(--thread); }
+header nav { display: flex; align-items: center; gap: 22px; }
+header nav a.link { color: var(--cream); text-decoration: none; font-weight: 500; font-size: 15px; }
+header nav a.link:hover { color: var(--thread); }
 header .btn { padding: 10px 16px; font-size: 15px; }
+@media (max-width: 700px) { header nav a.link { display: none; } }
 
 .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; padding-block: 48px 56px; }
 .hero h1 { font-size: clamp(56px, 10vw, 112px); font-weight: 900; margin: 14px 0 18px; }
@@ -61,26 +62,55 @@ header .btn { padding: 10px 16px; font-size: 15px; }
 .hero figure img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 6px; }
 .hero figcaption { position: absolute; left: 12px; bottom: 12px; background: rgba(15,14,12,.85); padding: 6px 10px; border-radius: 3px; font: 500 12px/1.3 var(--f-mono); color: var(--cream); letter-spacing: .04em; }
 
+.clients { border-block: 1px solid var(--line); background: var(--panel); }
+.clients .wrap { padding-block: 22px; display: grid; gap: 12px; }
+.clients ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 26px; }
+.clients li { font: 800 20px/1.2 var(--f-display); text-transform: uppercase; letter-spacing: .03em; color: var(--muted); }
+
 section { padding-block: 72px; }
-.sec-head { display: grid; gap: 12px; margin-bottom: 36px; max-width: 40em; }
+.sec-head { display: grid; gap: 12px; margin-bottom: 30px; max-width: 42em; }
 .sec-head p { color: var(--muted); }
 
-.work-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-.work-grid figure { margin: 0; }
-.work-grid img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 4px; }
-.work-grid figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.filters button { font: 600 14px/1 var(--f-body); color: var(--cream); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 10px 16px; cursor: pointer; }
+.filters button[aria-pressed="true"] { background: var(--thread); color: var(--ink); border-color: var(--thread); }
+.filters button .ct { font: 500 11px/1 var(--f-mono); opacity: .7; margin-left: 4px; }
+.gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.gallery button { all: unset; cursor: zoom-in; display: block; position: relative; border-radius: 4px; overflow: hidden; background: var(--panel); }
+.gallery button:focus-visible { outline: 3px solid var(--thread); outline-offset: 2px; }
+.gallery img { width: 100%; aspect-ratio: 3/4; object-fit: cover; transition: transform .35s ease; }
+.gallery button:hover img { transform: scale(1.04); }
+.gallery .cap { position: absolute; inset: auto 0 0 0; padding: 26px 10px 8px; font-size: 13px; font-weight: 600; background: linear-gradient(transparent, rgba(0,0,0,.82)); color: #fff; }
+.more { margin-top: 22px; display: flex; justify-content: center; }
+@media (prefers-reduced-motion: reduce) { .gallery img { transition: none; } }
 
-.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.lightbox { position: fixed; inset: 0; z-index: 50; background: rgba(8,7,6,.95); display: grid; grid-template-rows: auto 1fr auto; padding: max(12px, env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px)) max(12px, env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px)); }
+[hidden] { display: none !important; }
+.lightbox .bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.lightbox .bar p { font-weight: 600; }
+.lightbox .stage { display: grid; place-items: center; min-height: 0; position: relative; }
+.lightbox .stage img { max-height: 100%; max-height: calc(100vh - 140px); width: auto; border-radius: 4px; }
+.lb-btn { font: 600 15px/1 var(--f-body); background: var(--panel); color: var(--cream); border: 1px solid var(--line); border-radius: 4px; padding: 10px 14px; cursor: pointer; }
+.lightbox .nav { display: flex; justify-content: center; gap: 10px; padding-top: 10px; }
+
+.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .svc { padding: 26px 22px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: grid; gap: 10px; align-content: start; }
 .svc p { color: var(--muted); font-size: 15px; }
 .svc ul { margin: 4px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
-.svc li { font: 500 12px/1 var(--f-mono); border: 1px solid var(--line); padding: 6px 8px; border-radius: 3px; color: var(--cream); }
+.svc li { font: 500 12px/1 var(--f-mono); border: 1px solid var(--line); padding: 6px 8px; border-radius: 3px; }
 .svc .tag { font: 500 11px/1 var(--f-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--thread); }
 
 .steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; counter-reset: step; list-style: none; padding: 0; margin: 0; }
 .steps li { counter-increment: step; display: grid; gap: 8px; align-content: start; padding-top: 16px; border-top: 2px dashed var(--thread-deep); }
 .steps li::before { content: "0" counter(step); font: 900 40px/1 var(--f-display); color: var(--thread); }
 .steps p { color: var(--muted); font-size: 15px; }
+
+.about .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: center; }
+.about img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 6px; }
+.about .copy { display: grid; gap: 16px; }
+.about .copy p { color: var(--muted); }
+.about .facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+.about .facts span { font: 500 12px/1 var(--f-mono); border: 1px solid var(--line); padding: 8px 10px; border-radius: 3px; color: var(--cream); }
 
 .quote { background: var(--panel); border-block: 1px solid var(--line); }
 .quote .wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; }
@@ -101,7 +131,7 @@ fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
 .checks input { width: auto; accent-color: var(--thread); }
 .checks label:has(input:checked) { border-color: var(--thread); background: rgba(214,169,60,.1); }
 .hp { position: absolute; left: -9999px; }
-.err { color: var(--error); font-size: 14px; min-height: 0; }
+.err { color: var(--error); font-size: 14px; }
 .form-foot { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
 .form-foot small { color: var(--muted); }
 .done { grid-column: 1 / -1; border: 1px solid var(--thread); border-radius: 6px; padding: 28px; display: grid; gap: 10px; }
@@ -117,14 +147,15 @@ footer nav { display: flex; flex-wrap: wrap; gap: 18px; }
 footer a { color: var(--cream); text-decoration: none; }
 footer a:hover { color: var(--thread); }
 
-@media (max-width: 860px) {
-  .hero .wrap, .quote .wrap, .wholesale .wrap { grid-template-columns: 1fr; }
-  .hero figure img { aspect-ratio: 4/3; }
-  .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 900px) {
+  .hero .wrap, .quote .wrap, .wholesale .wrap, .about .wrap { grid-template-columns: 1fr; }
+  .hero figure img, .about img { aspect-ratio: 4/3; }
+  .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-@media (max-width: 520px) {
+@media (max-width: 560px) {
   form { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
   .steps { grid-template-columns: 1fr; }
   section { padding-block: 56px; }
   .hero .wrap { padding-block: 32px 44px; }
@@ -136,7 +167,12 @@ footer a:hover { color: var(--thread); }
 <header class="top">
   <div class="wrap">
     <a class="mark" href="#top">Millennial <span>Threadz</span></a>
-    <a class="btn btn-gold" href="#quote">Get a quote</a>
+    <nav aria-label="Main">
+      <a class="link" href="#work">Work</a>
+      <a class="link" href="#services">Services</a>
+      <a class="link" href="#about">About</a>
+      <a class="btn btn-gold" href="#quote">Get a quote</a>
+    </nav>
   </div>
 </header>
 
@@ -144,50 +180,57 @@ footer a:hover { color: var(--thread); }
   <div class="hero">
     <div class="wrap">
       <div>
-        <p class="eyebrow">Custom embroidery · Bellflower, CA</p>
+        <p class="eyebrow">Custom embroidery · Bellflower, CA · Since 2020</p>
         <h1>Your logo, <em>stitched</em> right.</h1>
         <p class="lede">Hats, jackets, polos and patches for brands, teams and businesses. We also do DTF, screen-print transfers, stickers and banners, all made in-house.</p>
         <div class="ctas">
           <a class="btn btn-gold" href="#quote">Request a quote</a>
-          <a class="btn btn-ghost" href="#wholesale" data-service="Wholesale hats">Wholesale hats for stores</a>
+          <a class="btn btn-ghost" href="#work">See our work</a>
         </div>
       </div>
       <figure>
-        <img src="images/stitching-gold.jpg" alt="Gold thread being stitched onto a black jacket on a multi-head embroidery machine">
-        <figcaption>On the machine: Chavalos de California jacket</figcaption>
+        <img src="images/work/utv-wrapz-jacket-hoop.jpg" alt="Large UTV Wrapz back design being embroidered on a jacket in the hoop">
+        <figcaption>On the machine: UTV Wrapz jacket back</figcaption>
       </figure>
     </div>
   </div>
 
-  <div class="stitch" aria-hidden="true"></div>
+  <div class="clients" aria-label="Some of our clients">
+    <div class="wrap">
+      <p class="eyebrow">Made for</p>
+      <ul>
+        <li>LB Steak</li><li>Chan Truck &amp; Auto Body</li><li>Eclipse Window Tint</li><li>DCS Equipment Rental</li><li>Mambo Grill &amp; Sports</li><li>La Barbacoa</li><li>Drain Bros Plumbing</li><li>JR Fuse Electric</li><li>Fathom Fabrication</li><li>Bellflower Bravehearts Softball</li><li>Cal State LA</li><li>Americanos Mobile Detail</li>
+      </ul>
+    </div>
+  </div>
 
-  <section aria-labelledby="work-h">
+  <section id="work" aria-labelledby="work-h">
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Recent work</p>
-        <h2 id="work-h">From hoop to finished piece</h2>
+        <h2 id="work-h">Our work</h2>
+        <p>Real orders for local businesses, teams, crews and brands. Tap any photo to see it full size.</p>
       </div>
-      <div class="work-grid">
-        <figure><img src="images/jacket-finished.jpg" alt="Finished black denim jacket with gold Chavalos de California embroidery" loading="lazy"><figcaption>Embroidered denim jackets</figcaption></figure>
-        <figure><img src="images/stitch-close.jpg" alt="Close-up of an embroidery needle filling a gold design" loading="lazy"><figcaption>Fill stitching up close</figcaption></figure>
-        <figure><img src="images/shop-machine.jpg" alt="Noe hooping a garment in front of the embroidery machine" loading="lazy"><figcaption>Hooping each piece by hand</figcaption></figure>
-        <figure><img src="images/multihead-run.jpg" alt="Several jackets running at once on a multi-head embroidery machine" loading="lazy"><figcaption>Multi-head runs for bulk orders</figcaption></figure>
-      </div>
+      <div class="filters" role="group" aria-label="Filter work" id="filters"></div>
+      <div class="gallery" id="gallery"></div>
+      <div class="more"><button class="btn btn-ghost" id="moreBtn" type="button">Show more</button></div>
     </div>
   </section>
 
-  <section aria-labelledby="svc-h" style="padding-top:0">
+  <div class="stitch" aria-hidden="true"></div>
+
+  <section id="services" aria-labelledby="svc-h">
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">What we make</p>
         <h2 id="svc-h">Services</h2>
-        <p>Pick one or mix them. Most orders combine embroidered hats with printed tees or stickers.</p>
+        <p>Pick one or mix them. Most orders combine embroidered hats with printed tees, jackets or stickers.</p>
       </div>
       <div class="services">
-        <div class="svc"><span class="tag">Core</span><h3>Embroidery</h3><p>Flat and 3D puff on structured hats, beanies, jackets and polos. Logo digitizing included in your quote.</p><ul><li>Hats</li><li>3D puff</li><li>Jackets</li><li>Polos</li><li>Patches</li></ul></div>
+        <div class="svc"><span class="tag">Core</span><h3>Embroidery</h3><p>Flat and 3D puff on structured hats, beanies, jackets, hoodies and polos. Big back designs too.</p><ul><li>Hats</li><li>3D puff</li><li>Jackets</li><li>Polos</li><li>Patches</li></ul></div>
         <div class="svc"><span class="tag">Full color</span><h3>DTF transfers</h3><p>Full-color prints with fine detail and gradients, pressed on cotton, poly and blends.</p><ul><li>Tees</li><li>Hoodies</li><li>Jerseys</li></ul></div>
         <div class="svc"><span class="tag">Bulk tees</span><h3>Screen-print transfers</h3><p>Classic screen-print look for one- to three-color designs, heat-pressed in-house.</p><ul><li>Staff shirts</li><li>Events</li><li>Merch drops</li></ul></div>
-        <div class="svc"><span class="tag">Print &amp; cut</span><h3>Stickers &amp; banners</h3><p>Die-cut stickers, decals and vinyl banners printed and contour-cut on our Roland.</p><ul><li>Die-cut stickers</li><li>Decals</li><li>Banners</li></ul></div>
+        <div class="svc"><span class="tag">Print &amp; cut</span><h3>Stickers &amp; banners</h3><p>Die-cut and holographic stickers, decals and vinyl banners printed and cut on our Roland.</p><ul><li>Die-cut stickers</li><li>Holographic</li><li>Team banners</li></ul></div>
       </div>
     </div>
   </section>
@@ -199,11 +242,24 @@ footer a:hover { color: var(--thread); }
         <h2 id="how-h">Four steps</h2>
       </div>
       <ol class="steps">
-        <li><h3>Send a request</h3><p>Fill out the quote form with your item, quantity and date you need it.</p></li>
-        <li><h3>Get your price</h3><p>We reply with a price and a mock-up of your logo on the item.</p></li>
+        <li><h3>Send a request</h3><p>Fill out the quote form with your item, quantity and the date you need it.</p></li>
+        <li><h3>Get your price</h3><p>We reply with a price and a preview of your logo on the item.</p></li>
         <li><h3>Approve</h3><p>Sign off on the design and we get it on the machine.</p></li>
         <li><h3>Pick up or ship</h3><p>Pickup in Bellflower by appointment, or we ship it to you.</p></li>
       </ol>
+    </div>
+  </section>
+
+  <section class="about" id="about" aria-labelledby="about-h" style="padding-top:0">
+    <div class="wrap">
+      <img src="images/work/ribbon-cutting-bellflower.jpg" alt="Noe cutting the ribbon at the Millennial Threadz grand opening with the Mayor of Bellflower and council members" loading="lazy">
+      <div class="copy">
+        <p class="eyebrow">About</p>
+        <h2 id="about-h">Built in Bellflower</h2>
+        <p>Millennial Threadz started in 2020 with one goal: give local businesses, teams and brands merch they're proud to wear. We've stitched for restaurants, body shops, contractors, schools, softball teams, car clubs and independent clothing brands across Southern California.</p>
+        <p>The City of Bellflower celebrated our opening with an official ribbon cutting. Today we run out of our Bellflower studio with a 4-head embroidery machine, a Roland print-and-cut and two heat presses, and we're ready to make your next order.</p>
+        <div class="facts"><span>Est. 2020</span><span>Bellflower, CA</span><span>4-head embroidery</span><span>Roland print &amp; cut</span></div>
+      </div>
     </div>
   </section>
 
@@ -225,7 +281,7 @@ footer a:hover { color: var(--thread); }
 
         <fieldset class="field full">
           <legend>What do you need?</legend>
-          <div class="checks" id="serviceChecks">
+          <div class="checks">
             <label><input type="checkbox" name="service" value="Embroidered hats"> Embroidered hats</label>
             <label><input type="checkbox" name="service" value="Embroidered apparel"> Jackets, polos, hoodies</label>
             <label><input type="checkbox" name="service" value="DTF prints"> DTF prints</label>
@@ -246,7 +302,7 @@ footer a:hover { color: var(--thread); }
         </div>
         <div class="field"><label for="needby">Need it by <span class="opt">(optional)</span></label><input id="needby" name="need_by" type="date"></div>
 
-        <div class="field full"><label for="details">Project details</label><textarea id="details" name="details" required placeholder="Example: 36 black Richardson 112 trucker hats, gold logo on the front, small text on the side."></textarea></div>
+        <div class="field full"><label for="details">Project details</label><textarea id="details" name="details" required placeholder="Example: 36 black trucker hats, gold logo on the front, small text on the side."></textarea></div>
         <div class="field full"><label for="logo">Link to your logo <span class="opt">(optional: Google Drive, Dropbox, Instagram post)</span></label><input id="logo" name="logo_link" type="url" placeholder="https://"></div>
 
         <div class="field"><label for="contactPref">Best way to reach you</label>
@@ -269,14 +325,14 @@ footer a:hover { color: var(--thread); }
 
   <section class="wholesale" id="wholesale" aria-labelledby="ws-h">
     <div class="wrap">
-      <img src="images/jackets-row.jpg" alt="Finished embroidered jackets lined up on the work table" loading="lazy">
+      <img src="images/work/lb-steak-hats-on-machine.jpg" alt="Finished LB Steak hats stacked on top of the embroidery machine" loading="lazy">
       <div>
         <p class="eyebrow">For shops and vendors</p>
         <h2 id="ws-h">Wholesale hats for your store</h2>
         <ul>
           <li>Ready-to-sell embroidered hats, including local designs</li>
           <li>Small opening order to test what sells</li>
-          <li>Weekly restocks delivered in the LA area</li>
+          <li>Regular restocks in the LA area</li>
           <li>Custom designs with your shop's name available</li>
         </ul>
         <a class="btn btn-gold" href="#quote" data-service="Wholesale hats">Ask about wholesale</a>
@@ -300,33 +356,147 @@ footer a:hover { color: var(--thread); }
   </div>
 </footer>
 
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <div class="bar"><p id="lbCap"></p><button class="lb-btn" id="lbClose" type="button">Close</button></div>
+  <div class="stage"><img id="lbImg" alt=""></div>
+  <div class="nav"><button class="lb-btn" id="lbPrev" type="button">← Previous</button><button class="lb-btn" id="lbNext" type="button">Next →</button></div>
+</div>
+
 <script>
-// Paste your Web3Forms access key here (free at web3forms.com; quotes are emailed to the address you sign up with).
 const WEB3FORMS_KEY = "890386f3-fff9-49de-b195-dc701a7d9bd8";
+
+// Gallery: [file, caption, category]  categories: hats, apparel, prints, extras
+const WORK = [
+  ["utv-wrapz-jacket-hoop","UTV Wrapz jacket back","apparel"],
+  ["lb-steak-hats-on-machine","LB Steak hats","hats"],
+  ["chan-auto-body-set","Chan Truck & Auto Body set","prints"],
+  ["24kt-patches-batch","24KT patches","extras"],
+  ["chavalos-hats-jackets-set","Chavalos de California set","apparel"],
+  ["americanos-stickers-hats","Americanos Mobile Detail stickers","extras"],
+  ["ibarra-mambo-hats","Mambo Grill & Sports hats","hats"],
+  ["shineboyz-hoodie","Shineboyz hoodie","apparel"],
+  ["bravehearts-banner-printed","Bravehearts softball banner","extras"],
+  ["nova-3d-puff-hat","NOVA 3D puff hat","hats"],
+  ["eclipse-polos-front-back","Eclipse Window Tint polos","apparel"],
+  ["xplosion-jersey-front","Xplosion jersey","prints"],
+  ["24kt-hats-group","24KT hats","hats"],
+  ["lb-steak-jackets-group","LB Steak jackets","apparel"],
+  ["la-barbacoa-hat","La Barbacoa hat","hats"],
+  ["cal-state-la-stole","Cal State LA graduation stole","extras"],
+  ["dcs-jackets","DCS Equipment Rental jackets","apparel"],
+  ["jr-fuse-electric-hats","JR Fuse Electric hats","hats"],
+  ["milians-shirts-stack","Milian's Auto Detailing shirts","prints"],
+  ["los-viajeros-jacket","Los Viajeros jacket","apparel"],
+  ["santa-cruz-hats-group","Santa Cruz hats","hats"],
+  ["drain-bros-shirt","Drain Bros Plumbing shirt","prints"],
+  ["r32-hoodies-bw","R32 hoodies","apparel"],
+  ["los-del-alba-hat","Los del Alba hat","hats"],
+  ["chavalos-jacket-worn","Chavalos de California jacket","apparel"],
+  ["red-tape-hat","Red Tape hat","hats"],
+  ["ruiz-jersey-back","Custom name jersey","prints"],
+  ["fathom-jacket","Fathom Fabrication jacket","apparel"],
+  ["vcb-carriers-hats","VCB Carriers hats","hats"],
+  ["24kt-patch-closeup","24KT patch close-up","extras"],
+  ["aims-club-crewneck","AIMS Club crewneck","apparel"],
+  ["ibarra-norteno-hats","Ibarra Norteño hats","hats"],
+  ["661-painted-hats-shirt","661 Painted hats & shirt","prints"],
+  ["buen-estilo-jacket-back","Buen Estilo jacket","apparel"],
+  ["metro-114-hat","Metro 114 hat","hats"],
+  ["bravehearts-banner-closeup","Bravehearts banner close-up","extras"],
+  ["sistema-poderoso-jacket","Sistema Poderoso jacket","apparel"],
+  ["self-made-palmdale-hat","Self Made Palmdale hat","hats"],
+  ["emmetts-entourage-shirts","Emmett's Entourage shirts","prints"],
+  ["vgb-carriers-jacket","Carriers jacket","apparel"],
+  ["pryvl-fitness-hat-worn","PRYVL Fitness hat","hats"],
+  ["drain-bros-beanies","Drain Bros beanies","hats"],
+  ["glazed-hoodie","Glazed hoodie","apparel"],
+  ["international-barbershop-hat","International Barbershop hat","hats"],
+  ["king-of-hearts-shirt","King of Hearts shirt","prints"],
+  ["dcs-jacket-closeup","DCS jacket close-up","apparel"],
+  ["chavalos-camo-hat","Chavalos camo hat","hats"],
+  ["milians-shirt-back","Milian's shirt back","prints"],
+  ["lb-steak-jacket-closeup","LB Steak jacket close-up","apparel"],
+  ["vm-barbed-wire-hat","Barbed wire hat","hats"],
+  ["drain-bros-shirt-front","Drain Bros shirt front","prints"],
+  ["eclipse-polo-closeup","Eclipse polo close-up","apparel"],
+  ["keep-smiling-hats","Keep Smiling hats","hats"],
+  ["661-painted-shirt","661 Painted shirt","prints"],
+  ["chavalos-jackets-pair","Chavalos jackets","apparel"],
+  ["top-performance-hat","Top Performance hat","hats"],
+  ["gente-de-rancho-sanchez","Gente de Rancho","prints"],
+  ["shineboyz-closeup","Shineboyz close-up","apparel"],
+  ["san-judas-hat","San Judas hat","hats"],
+  ["milians-shirt-front","Milian's shirt front","prints"],
+  ["r32-hoodies-closeup","R32 hoodie close-up","apparel"],
+  ["base-tealers-hat","Base Tealers hat","hats"],
+  ["buen-estilo-jacket-front","Buen Estilo jacket front","apparel"],
+  ["314-legendary-soccer-hats","314 Legendary hats","hats"],
+  ["lb-steak-hat-in-hand","LB Steak hat","hats"],
+  ["pg-hats","PG hats","hats"],
+  ["fregoso-hat-closeup","Fregoso hat","hats"],
+  ["p-trucker-hat","Trucker hat","hats"],
+  ["chavalos-hats-screen","Chavalos hats","hats"],
+  ["santa-cruz-hat-closeup","Santa Cruz hat close-up","hats"],
+  ["24kt-hat-in-hand","24KT hat","hats"]
+];
+const CATS = [["all","All"],["hats","Hats"],["apparel","Jackets & Apparel"],["prints","Prints & DTF"],["extras","Patches, Stickers & Banners"]];
+const PAGE = 16;
+
+(function () {
+  const gal = document.getElementById("gallery"), fil = document.getElementById("filters"), more = document.getElementById("moreBtn");
+  let cat = "all", shown = PAGE, list = WORK;
+  CATS.forEach(([k, label]) => {
+    const n = k === "all" ? WORK.length : WORK.filter(w => w[2] === k).length;
+    const b = document.createElement("button"); b.type = "button"; b.dataset.cat = k;
+    b.setAttribute("aria-pressed", k === "all"); b.innerHTML = label + '<span class="ct">' + n + "</span>";
+    b.onclick = () => { cat = k; shown = PAGE; fil.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); render(); };
+    fil.appendChild(b);
+  });
+  function render() {
+    list = cat === "all" ? WORK : WORK.filter(w => w[2] === cat);
+    gal.innerHTML = "";
+    list.slice(0, shown).forEach(([f, cap], i) => {
+      const b = document.createElement("button"); b.type = "button"; b.setAttribute("aria-label", "View " + cap);
+      b.innerHTML = '<img src="images/work/' + f + '.jpg" alt="' + cap.replace(/"/g, "&quot;") + '" loading="lazy"><span class="cap">' + cap + "</span>";
+      b.onclick = () => openLB(i); gal.appendChild(b);
+    });
+    more.parentElement.hidden = shown >= list.length;
+  }
+  more.onclick = () => { shown += PAGE; render(); };
+  render();
+
+  const lb = document.getElementById("lightbox"), img = document.getElementById("lbImg"), cap = document.getElementById("lbCap");
+  let idx = 0, lastFocus = null;
+  function show() { const [f, c] = list[idx]; img.src = "images/work/" + f + ".jpg"; img.alt = c; cap.textContent = c + "  ·  " + (idx + 1) + " / " + list.length; }
+  function openLB(i) { idx = i; lastFocus = document.activeElement; show(); lb.hidden = false; document.body.style.overflow = "hidden"; document.getElementById("lbClose").focus(); }
+  function closeLB() { lb.hidden = true; document.body.style.overflow = ""; if (lastFocus) lastFocus.focus(); }
+  const step = d => { idx = (idx + d + list.length) % list.length; show(); };
+  document.getElementById("lbClose").onclick = closeLB;
+  document.getElementById("lbPrev").onclick = () => step(-1);
+  document.getElementById("lbNext").onclick = () => step(1);
+  lb.addEventListener("click", e => { if (e.target === lb || e.target.classList.contains("stage")) closeLB(); });
+  document.addEventListener("keydown", e => { if (lb.hidden) return; if (e.key === "Escape") closeLB(); if (e.key === "ArrowLeft") step(-1); if (e.key === "ArrowRight") step(1); });
+  let sx = null;
+  lb.addEventListener("touchstart", e => { sx = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener("touchend", e => { if (sx === null) return; const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1); sx = null; });
+})();
 
 (function () {
   const form = document.getElementById("quoteForm");
   const $ = (id) => document.getElementById(id);
-
-  // Buttons with data-service jump to the form with that item pre-checked.
   document.querySelectorAll("[data-service]").forEach((el) => {
     el.addEventListener("click", () => {
       const box = form.querySelector('input[name="service"][value="' + el.dataset.service + '"]');
       if (box) box.checked = true;
-      if (el.getAttribute("href") === "#wholesale") return;
-      setTimeout(() => $("name").focus({ preventScroll: true }), 400);
     });
   });
-
-  // ?service=wholesale in the link (e.g. from Instagram) pre-checks wholesale.
   try {
     const s = new URLSearchParams(location.search).get("service");
     if (s && s.toLowerCase().startsWith("whole")) form.querySelector('input[value="Wholesale hats"]').checked = true;
   } catch (e) {}
 
-  function showDone(preview) {
-    form.innerHTML = '<div class="done"><h3>Request sent</h3><p>Thanks! We\'ll get back to you with a price, usually within one business day. If you have a logo file, DM it to <a href="https://www.instagram.com/millennialthreadz" target="_blank" rel="noopener">@millennialthreadz</a>.</p>' +
-      (preview ? '<p class="opt">Preview mode: this request was not sent. Add your Web3Forms key and publish the site to receive real quotes.</p>' : '') + '</div>';
+  function showDone() {
+    form.innerHTML = '<div class="done"><h3>Request sent</h3><p>Thanks! We\'ll get back to you with a price, usually within one business day. If you have a logo file, DM it to <a href="https://www.instagram.com/millennialthreadz" target="_blank" rel="noopener">@millennialthreadz</a>.</p></div>';
     form.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 
@@ -347,9 +517,6 @@ const WEB3FORMS_KEY = "890386f3-fff9-49de-b195-dc701a7d9bd8";
     const data = Object.fromEntries(new FormData(form).entries());
     if (data.botcheck) return;
     data.service = services.join(", ");
-    const preview = WEB3FORMS_KEY.startsWith("PASTE") || /claude|anthropic/.test(location.hostname) || location.protocol === "file:";
-    if (preview) { showDone(true); return; }
-
     const btn = $("submitBtn"); btn.disabled = true; btn.textContent = "Sending…"; $("sendErr").hidden = true;
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
@@ -364,7 +531,7 @@ const WEB3FORMS_KEY = "890386f3-fff9-49de-b195-dc701a7d9bd8";
       });
       const out = await res.json().catch(() => ({}));
       if (!res.ok || out.success === false) throw new Error(out.message || "Send failed");
-      showDone(false);
+      showDone();
     } catch (err) {
       btn.disabled = false; btn.textContent = "Send quote request";
       $("sendErr").textContent = "Your request didn't go through. Check your connection and try again, or DM us at @millennialthreadz.";

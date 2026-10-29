@@ -398,27 +398,19 @@ const WEB3FORMS_KEY = "890386f3-fff9-49de-b195-dc701a7d9bd8";
 // Gallery: [file, caption, category]  categories: hats, apparel, prints, extras
 const WORK = [
   ["electrolit-miami-staff","Electrolit event staff uniforms","apparel"],
-  ["electrolit-jacket","Electrolit embroidered jacket","apparel"],
   ["utv-wrapz-jacket-hoop","UTV Wrapz jacket back","apparel"],
   ["lb-steak-hats-on-machine","LB Steak hats","hats"],
   ["chan-auto-body-set","Chan Truck & Auto Body set","prints"],
   ["24kt-patches-batch","24KT patches","extras"],
-  ["electrolit-vest-denim","Electrolit denim vest","apparel"],
-  ["electrolit-marathon-sign","Electrolit LA Marathon sign","extras"],
-  ["electrolit-sleeveless","Electrolit sleeveless top","apparel"],
-  ["electrolit-vest-tan","Electrolit knit vest","apparel"],
-  ["electrolit-shirt","Electrolit embroidered tee","apparel"],
-  ["electrolit-horn","Electrolit fan horn decal","extras"],
-  ["electrolit-asics-shirt","Electrolit performance shirt","prints"],
-  ["electrolit-vest-cream","Electrolit cream vest","apparel"],
-  ["electrolit-vest-cream-3","Electrolit vest","apparel"],
   ["leorachi-jacket","Leorachi bomber jacket","apparel"],
+  ["electrolit-jacket","Electrolit embroidered jacket","apparel"],
   ["quality-auto-hoodies","Quality Auto & custom car hoodies","apparel"],
   ["streetwear-banner","Streetwear sale banner","extras"],
   ["la-drip-hats","LA hats","hats"],
   ["bunny-hats","Bunny trucker hats","hats"],
   ["car-hoodie-closeup","Custom car embroidery","apparel"],
   ["tqm-streetmob-hats","TQM & Street Mob Records hats","hats"],
+  ["electrolit-vest-denim","Electrolit denim vest","apparel"],
   ["famosa-jersey","Famosa jersey","apparel"],
   ["character-flower-hats","Character & flower hats","hats"],
   ["fregoso-hats-polo","Fregoso hats & polo","hats"],
@@ -426,6 +418,7 @@ const WORK = [
   ["chavalos-hats-jackets-set","Chavalos de California set","apparel"],
   ["americanos-stickers-hats","Americanos Mobile Detail stickers","extras"],
   ["ibarra-mambo-hats","Mambo Grill & Sports hats","hats"],
+  ["electrolit-marathon-sign","Electrolit LA Marathon sign","extras"],
   ["shineboyz-hoodie","Shineboyz hoodie","apparel"],
   ["bravehearts-banner-printed","Bravehearts softball banner","extras"],
   ["nova-3d-puff-hat","NOVA 3D puff hat","hats"],
@@ -433,6 +426,7 @@ const WORK = [
   ["xplosion-jersey-front","Xplosion jersey","prints"],
   ["24kt-hats-group","24KT hats","hats"],
   ["lb-steak-jackets-group","LB Steak jackets","apparel"],
+  ["electrolit-sleeveless","Electrolit sleeveless top","apparel"],
   ["la-barbacoa-hat","La Barbacoa hat","hats"],
   ["cal-state-la-stole","Cal State LA graduation stole","extras"],
   ["dcs-jackets","DCS Equipment Rental jackets","apparel"],
@@ -440,6 +434,7 @@ const WORK = [
   ["milians-shirts-stack","Milian's Auto Detailing shirts","prints"],
   ["los-viajeros-jacket","Los Viajeros jacket","apparel"],
   ["santa-cruz-hats-group","Santa Cruz hats","hats"],
+  ["electrolit-asics-shirt","Electrolit performance shirt","prints"],
   ["drain-bros-shirt","Drain Bros Plumbing shirt","prints"],
   ["r32-hoodies-bw","R32 hoodies","apparel"],
   ["los-del-alba-hat","Los del Alba hat","hats"],
@@ -447,6 +442,7 @@ const WORK = [
   ["red-tape-hat","Red Tape hat","hats"],
   ["ruiz-jersey-back","Custom name jersey","prints"],
   ["fathom-jacket","Fathom Fabrication jacket","apparel"],
+  ["electrolit-vest-tan","Electrolit knit vest","apparel"],
   ["vcb-carriers-hats","VCB Carriers hats","hats"],
   ["24kt-patch-closeup","24KT patch close-up","extras"],
   ["aims-club-crewneck","AIMS Club crewneck","apparel"],
@@ -454,6 +450,7 @@ const WORK = [
   ["661-painted-hats-shirt","661 Painted hats & shirt","prints"],
   ["buen-estilo-jacket-back","Buen Estilo jacket","apparel"],
   ["metro-114-hat","Metro 114 hat","hats"],
+  ["electrolit-horn","Electrolit fan horn decal","extras"],
   ["bravehearts-banner-closeup","Bravehearts banner close-up","extras"],
   ["sistema-poderoso-jacket","Sistema Poderoso jacket","apparel"],
   ["self-made-palmdale-hat","Self Made Palmdale hat","hats"],
@@ -461,6 +458,7 @@ const WORK = [
   ["vgb-carriers-jacket","Carriers jacket","apparel"],
   ["pryvl-fitness-hat-worn","PRYVL Fitness hat","hats"],
   ["drain-bros-beanies","Drain Bros beanies","hats"],
+  ["electrolit-vest-cream","Electrolit cream vest","apparel"],
   ["glazed-hoodie","Glazed hoodie","apparel"],
   ["international-barbershop-hat","International Barbershop hat","hats"],
   ["king-of-hearts-shirt","King of Hearts shirt","prints"],
@@ -492,16 +490,17 @@ const WORK = [
   ["24kt-hat-in-hand","24KT hat","hats"]
 ];
 const CATS = [["all","All"],["hats","Hats"],["apparel","Jackets & Apparel"],["prints","Prints & DTF"],["extras","Patches, Stickers & Banners"]];
-const PAGE = 16;
+const ROWS = 3;
+const perPage = () => { const g = document.getElementById("gallery"); const cols = g ? getComputedStyle(g).gridTemplateColumns.split(" ").filter(Boolean).length : 4; return (cols || 4) * ROWS; };
 
 (function () {
   const gal = document.getElementById("gallery"), fil = document.getElementById("filters"), more = document.getElementById("moreBtn");
-  let cat = "all", shown = PAGE, list = WORK;
+  let cat = "all", shown = perPage(), list = WORK;
   CATS.forEach(([k, label]) => {
     const n = k === "all" ? WORK.length : WORK.filter(w => w[2] === k).length;
     const b = document.createElement("button"); b.type = "button"; b.dataset.cat = k;
     b.setAttribute("aria-pressed", k === "all"); b.innerHTML = label + '<span class="ct">' + n + "</span>";
-    b.onclick = () => { cat = k; shown = PAGE; fil.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); render(); };
+    b.onclick = () => { cat = k; shown = perPage(); fil.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); render(); };
     fil.appendChild(b);
   });
   function render() {
@@ -514,7 +513,7 @@ const PAGE = 16;
     });
     more.parentElement.hidden = shown >= list.length;
   }
-  more.onclick = () => { shown += PAGE; render(); };
+  more.onclick = () => { shown += perPage(); render(); };
   render();
 
   const lb = document.getElementById("lightbox"), img = document.getElementById("lbImg"), cap = document.getElementById("lbCap");

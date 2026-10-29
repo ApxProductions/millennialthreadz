@@ -120,7 +120,9 @@ section { padding-block: 72px; }
 .quote .wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; }
 .quote aside { display: grid; gap: 16px; align-content: start; }
 .quote aside p { color: var(--muted); }
-.quote aside .note { font-size: 14px; border-left: 3px solid var(--thread); padding-left: 12px; }
+.quote aside .note { font-size: 14px; border-left: 3px solid var(--thread); padding-left: 12px; color: var(--muted); display: grid; gap: 8px; }
+.quote aside .note strong { color: var(--cream); }
+.logo-ways { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
 form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 18px; }
 .field { display: grid; gap: 6px; min-width: 0; }
 .field.full { grid-column: 1 / -1; }
@@ -258,7 +260,7 @@ footer a:hover { color: var(--thread); }
 
   <section class="about" id="about" aria-labelledby="about-h" style="padding-top:0">
     <div class="wrap">
-      <img src="images/work/noe-at-machine.jpg" alt="Noe hooping a jacket at the embroidery machine" loading="lazy">
+      <img src="images/work/chan-auto-body-set.jpg" alt="Finished Chan Truck & Auto Body hats and shirts in front of the embroidery machine" loading="lazy">
       <div class="copy">
         <p class="eyebrow">About</p>
         <h2 id="about-h">Made in LA</h2>
@@ -288,7 +290,15 @@ footer a:hover { color: var(--thread); }
         <p class="eyebrow">Free quote</p>
         <h2 id="quote-h">Tell us what you need</h2>
         <p>The more detail you give, the faster we can price it. Not sure on the method? Leave it to us and we'll recommend the best fit.</p>
-        <p class="note">Have a logo file? After you submit, send it by DM to <a href="https://www.instagram.com/millennialthreadz" target="_blank" rel="noopener">@millennialthreadz</a>, or paste a link to it below.</p>
+        <div class="note">
+          <p><strong>Have a logo file?</strong> Send it any of these ways:</p>
+          <ul class="logo-ways">
+            <li>Email it to <a href="mailto:support@millennialthreadz.com">support@millennialthreadz.com</a></li>
+            <li>DM it to <a href="https://www.instagram.com/millennialthreadz" target="_blank" rel="noopener">@millennialthreadz</a> on Instagram</li>
+            <li>Paste a link to it in the form</li>
+          </ul>
+          <p>Include your name so we can match it to your request. PNG, JPG, PDF, AI or SVG all work.</p>
+        </div>
       </aside>
 
       <form id="quoteForm" novalidate>
@@ -370,6 +380,7 @@ footer a:hover { color: var(--thread); }
     <nav aria-label="Social">
       <a href="https://www.instagram.com/millennialthreadz" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.youtube.com/@millennialthreadz" target="_blank" rel="noopener">YouTube</a>
+      <a href="mailto:support@millennialthreadz.com">support@millennialthreadz.com</a>
       <a href="#quote">Get a quote</a>
     </nav>
   </div>
@@ -537,7 +548,7 @@ const PAGE = 16;
   } catch (e) {}
 
   function showDone() {
-    form.innerHTML = '<div class="done"><h3>Request sent</h3><p>Thanks! We\'ll get back to you with a price, usually within one business day. If you have a logo file, DM it to <a href="https://www.instagram.com/millennialthreadz" target="_blank" rel="noopener">@millennialthreadz</a>.</p></div>';
+    form.innerHTML = '<div class="done"><h3>Request sent</h3><p>Thanks! We\'ll get back to you with a price, usually within one business day. Have a logo file? Email it to <a href="mailto:support@millennialthreadz.com">support@millennialthreadz.com</a> or DM it to <a href="https://www.instagram.com/millennialthreadz" target="_blank" rel="noopener">@millennialthreadz</a>.</p></div>';
     form.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 
@@ -575,7 +586,7 @@ const PAGE = 16;
       showDone();
     } catch (err) {
       btn.disabled = false; btn.textContent = "Send quote request";
-      $("sendErr").textContent = "Your request didn't go through. Check your connection and try again, or DM us at @millennialthreadz.";
+      $("sendErr").textContent = "Your request didn't go through. Check your connection and try again, or email support@millennialthreadz.com.";
       $("sendErr").hidden = false;
     }
   });

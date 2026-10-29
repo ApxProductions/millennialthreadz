@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Millennial Threadz</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Custom embroidery, DTF, screen-print transfers, stickers and banners from Bellflower, CA. Hats, jackets, polos and patches for brands, teams and businesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: dark shop-floor page; gold "satin stitch" dashes mark section seams; photo-led hero, then services, process, quote form. */
+:root {
+  --ink: #0f0e0c;        /* page */
+  --panel: #1a1814;      /* raised surfaces */
+  --line: #3a342a;       /* borders */
+  --thread: #d6a93c;     /* gold thread accent */
+  --thread-deep: #a9822a;
+  --cream: #f1ebdd;      /* text */
+  --muted: #a8a08f;      /* secondary text */
+  --error: #ff8a7a;
+  --f-display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --f-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { background: var(--ink); color: var(--cream); font: 400 17px/1.6 var(--f-body); }
+a { color: var(--thread); }
+img { max-width: 100%; display: block; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font: 500 12px/1 var(--f-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--thread); }
+h1, h2, h3 { font-family: var(--f-display); text-transform: uppercase; line-height: .95; margin: 0; text-wrap: balance; letter-spacing: .01em; }
+h2 { font-size: clamp(40px, 7vw, 64px); font-weight: 800; }
+h3 { font-size: 26px; font-weight: 800; }
+p { margin: 0; }
+.stitch { height: 4px; background: repeating-linear-gradient(90deg, var(--thread) 0 14px, transparent 14px 22px); opacity: .85; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 22px; border-radius: 4px; font: 600 16px/1 var(--f-body); text-decoration: none; border: 2px solid var(--thread); cursor: pointer; }
+.btn-gold { background: var(--thread); color: var(--ink); }
+.btn-gold:hover { background: #e6bb52; }
+.btn-ghost { color: var(--cream); background: transparent; }
+.btn-ghost:hover { background: rgba(214,169,60,.12); }
+.btn:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, a:focus-visible { outline: 3px solid var(--cream); outline-offset: 2px; }
+
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--ink); }
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: rgba(15,14,12,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 12px; }
+.mark { font: 900 22px/1 var(--f-display); text-transform: uppercase; letter-spacing: .04em; color: var(--cream); text-decoration: none; }
+.mark span { color: var(--thread); }
+header .btn { padding: 10px 16px; font-size: 15px; }
+
+.hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; padding-block: 48px 56px; }
+.hero h1 { font-size: clamp(56px, 10vw, 112px); font-weight: 900; margin: 14px 0 18px; }
+.hero h1 em { font-style: normal; color: var(--thread); }
+.hero .lede { color: var(--muted); max-width: 34em; font-size: 18px; }
+.hero .ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.hero figure { margin: 0; position: relative; }
+.hero figure img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 6px; }
+.hero figcaption { position: absolute; left: 12px; bottom: 12px; background: rgba(15,14,12,.85); padding: 6px 10px; border-radius: 3px; font: 500 12px/1.3 var(--f-mono); color: var(--cream); letter-spacing: .04em; }
+
+section { padding-block: 72px; }
+.sec-head { display: grid; gap: 12px; margin-bottom: 36px; max-width: 40em; }
+.sec-head p { color: var(--muted); }
+
+.work-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.work-grid figure { margin: 0; }
+.work-grid img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 4px; }
+.work-grid figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; }
+
+.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.svc { padding: 26px 22px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: grid; gap: 10px; align-content: start; }
+.svc p { color: var(--muted); font-size: 15px; }
+.svc ul { margin: 4px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+.svc li { font: 500 12px/1 var(--f-mono); border: 1px solid var(--line); padding: 6px 8px; border-radius: 3px; color: var(--cream); }
+.svc .tag { font: 500 11px/1 var(--f-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--thread); }
+
+.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; counter-reset: step; list-style: none; padding: 0; margin: 0; }
+.steps li { counter-increment: step; display: grid; gap: 8px; align-content: start; padding-top: 16px; border-top: 2px dashed var(--thread-deep); }
+.steps li::before { content: "0" counter(step); font: 900 40px/1 var(--f-display); color: var(--thread); }
+.steps p { color: var(--muted); font-size: 15px; }
+
+.quote { background: var(--panel); border-block: 1px solid var(--line); }
+.quote .wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; }
+.quote aside { display: grid; gap: 16px; align-content: start; }
+.quote aside p { color: var(--muted); }
+.quote aside .note { font-size: 14px; border-left: 3px solid var(--thread); padding-left: 12px; }
+form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 18px; }
+.field { display: grid; gap: 6px; min-width: 0; }
+.field.full { grid-column: 1 / -1; }
+label, legend { font-weight: 600; font-size: 15px; }
+.opt { color: var(--muted); font-weight: 400; font-size: 13px; }
+input, select, textarea { width: 100%; font: 400 16px/1.4 var(--f-body); color: var(--cream); background: var(--ink); border: 1px solid var(--line); border-radius: 4px; padding: 12px; }
+textarea { min-height: 120px; resize: vertical; }
+input::placeholder, textarea::placeholder { color: #6f685b; }
+fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+.checks { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.checks label { display: inline-flex; align-items: center; gap: 8px; font-weight: 500; border: 1px solid var(--line); border-radius: 4px; padding: 10px 12px; cursor: pointer; background: var(--ink); }
+.checks input { width: auto; accent-color: var(--thread); }
+.checks label:has(input:checked) { border-color: var(--thread); background: rgba(214,169,60,.1); }
+.hp { position: absolute; left: -9999px; }
+.err { color: var(--error); font-size: 14px; min-height: 0; }
+.form-foot { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+.form-foot small { color: var(--muted); }
+.done { grid-column: 1 / -1; border: 1px solid var(--thread); border-radius: 6px; padding: 28px; display: grid; gap: 10px; }
+.done h3 { color: var(--thread); }
+
+.wholesale .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.wholesale img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px; }
+.wholesale ul { margin: 18px 0 26px; padding-left: 20px; color: var(--muted); display: grid; gap: 6px; }
+
+footer { border-top: 1px solid var(--line); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; padding-block: 36px; color: var(--muted); font-size: 15px; }
+footer nav { display: flex; flex-wrap: wrap; gap: 18px; }
+footer a { color: var(--cream); text-decoration: none; }
+footer a:hover { color: var(--thread); }
+
+@media (max-width: 860px) {
+  .hero .wrap, .quote .wrap, .wholesale .wrap { grid-template-columns: 1fr; }
+  .hero figure img { aspect-ratio: 4/3; }
+  .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) {
+  form { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; }
+  section { padding-block: 56px; }
+  .hero .wrap { padding-block: 32px 44px; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top">Millennial <span>Threadz</span></a>
+    <a class="btn btn-gold" href="#quote">Get a quote</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Custom embroidery · Bellflower, CA</p>
+        <h1>Your logo, <em>stitched</em> right.</h1>
+        <p class="lede">Hats, jackets, polos and patches for brands, teams and businesses. We also do DTF, screen-print transfers, stickers and banners, all made in-house.</p>
+        <div class="ctas">
+          <a class="btn btn-gold" href="#quote">Request a quote</a>
+          <a class="btn btn-ghost" href="#wholesale" data-service="Wholesale hats">Wholesale hats for stores</a>
+        </div>
+      </div>
+      <figure>
+        <img src="images/stitching-gold.jpg" alt="Gold thread being stitched onto a black jacket on a multi-head embroidery machine">
+        <figcaption>On the machine: Chavalos de California jacket</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="stitch" aria-hidden="true"></div>
+
+  <section aria-labelledby="work-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Recent work</p>
+        <h2 id="work-h">From hoop to finished piece</h2>
+      </div>
+      <div class="work-grid">
+        <figure><img src="images/jacket-finished.jpg" alt="Finished black denim jacket with gold Chavalos de California embroidery" loading="lazy"><figcaption>Embroidered denim jackets</figcaption></figure>
+        <figure><img src="images/stitch-close.jpg" alt="Close-up of an embroidery needle filling a gold design" loading="lazy"><figcaption>Fill stitching up close</figcaption></figure>
+        <figure><img src="images/shop-machine.jpg" alt="Noe hooping a garment in front of the embroidery machine" loading="lazy"><figcaption>Hooping each piece by hand</figcaption></figure>
+        <figure><img src="images/multihead-run.jpg" alt="Several jackets running at once on a multi-head embroidery machine" loading="lazy"><figcaption>Multi-head runs for bulk orders</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="svc-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">What we make</p>
+        <h2 id="svc-h">Services</h2>
+        <p>Pick one or mix them. Most orders combine embroidered hats with printed tees or stickers.</p>
+      </div>
+      <div class="services">
+        <div class="svc"><span class="tag">Core</span><h3>Embroidery</h3><p>Flat and 3D puff on structured hats, beanies, jackets and polos. Logo digitizing included in your quote.</p><ul><li>Hats</li><li>3D puff</li><li>Jackets</li><li>Polos</li><li>Patches</li></ul></div>
+        <div class="svc"><span class="tag">Full color</span><h3>DTF transfers</h3><p>Full-color prints with fine detail and gradients, pressed on cotton, poly and blends.</p><ul><li>Tees</li><li>Hoodies</li><li>Jerseys</li></ul></div>
+        <div class="svc"><span class="tag">Bulk tees</span><h3>Screen-print transfers</h3><p>Classic screen-print look for one- to three-color designs, heat-pressed in-house.</p><ul><li>Staff shirts</li><li>Events</li><li>Merch drops</li></ul></div>
+        <div class="svc"><span class="tag">Print &amp; cut</span><h3>Stickers &amp; banners</h3><p>Die-cut stickers, decals and vinyl banners printed and contour-cut on our Roland.</p><ul><li>Die-cut stickers</li><li>Decals</li><li>Banners</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="how-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">How ordering works</p>
+        <h2 id="how-h">Four steps</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>Send a request</h3><p>Fill out the quote form with your item, quantity and date you need it.</p></li>
+        <li><h3>Get your price</h3><p>We reply with a price and a mock-up of your logo on the item.</p></li>
+        <li><h3>Approve</h3><p>Sign off on the design and we get it on the machine.</p></li>
+        <li><h3>Pick up or ship</h3><p>Pickup in Bellflower by appointment, or we ship it to you.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="quote" id="quote" aria-labelledby="quote-h">
+    <div class="wrap">
+      <aside>
+        <p class="eyebrow">Free quote</p>
+        <h2 id="quote-h">Tell us what you need</h2>
+        <p>The more detail you give, the faster we can price it. Not sure on the method? Leave it to us and we'll recommend the best fit.</p>
+        <p class="note">Have a logo file? After you submit, send it by DM to <a href="https://www.instagram.com/millennialthreadz" target="_blank" rel="noopener">@millennialthreadz</a>, or paste a link to it below.</p>
+      </aside>
+
+      <form id="quoteForm" novalidate>
+        <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="business">Business, team or brand <span class="opt">(optional)</span></label><input id="business" name="business" autocomplete="organization"></div>
+        <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(562) 555-0123"></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+        <p class="err full" id="contactErr" hidden>Add a phone number or an email so we can send your quote.</p>
+
+        <fieldset class="field full">
+          <legend>What do you need?</legend>
+          <div class="checks" id="serviceChecks">
+            <label><input type="checkbox" name="service" value="Embroidered hats"> Embroidered hats</label>
+            <label><input type="checkbox" name="service" value="Embroidered apparel"> Jackets, polos, hoodies</label>
+            <label><input type="checkbox" name="service" value="DTF prints"> DTF prints</label>
+            <label><input type="checkbox" name="service" value="Screen-print transfers"> Screen-print transfers</label>
+            <label><input type="checkbox" name="service" value="Stickers"> Stickers</label>
+            <label><input type="checkbox" name="service" value="Banners"> Banners</label>
+            <label><input type="checkbox" name="service" value="Patches"> Patches</label>
+            <label><input type="checkbox" name="service" value="Wholesale hats"> Wholesale hats for my store</label>
+          </div>
+          <p class="err" id="serviceErr" hidden>Pick at least one item.</p>
+        </fieldset>
+
+        <div class="field"><label for="qty">Quantity</label>
+          <select id="qty" name="quantity" required>
+            <option value="">Choose a range</option>
+            <option>1–11</option><option>12–23</option><option>24–47</option><option>48–99</option><option>100–249</option><option>250+</option><option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field"><label for="needby">Need it by <span class="opt">(optional)</span></label><input id="needby" name="need_by" type="date"></div>
+
+        <div class="field full"><label for="details">Project details</label><textarea id="details" name="details" required placeholder="Example: 36 black Richardson 112 trucker hats, gold logo on the front, small text on the side."></textarea></div>
+        <div class="field full"><label for="logo">Link to your logo <span class="opt">(optional: Google Drive, Dropbox, Instagram post)</span></label><input id="logo" name="logo_link" type="url" placeholder="https://"></div>
+
+        <div class="field"><label for="contactPref">Best way to reach you</label>
+          <select id="contactPref" name="contact_preference"><option>Text</option><option>Call</option><option>Email</option><option>Instagram DM</option></select>
+        </div>
+        <div class="field"><label for="source">How did you find us? <span class="opt">(optional)</span></label>
+          <select id="source" name="found_us"><option value="">Choose one</option><option>Instagram</option><option>TikTok</option><option>YouTube</option><option>Google</option><option>Friend or referral</option><option>Saw our work in person</option><option>Other</option></select>
+        </div>
+
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="form-foot">
+          <button class="btn btn-gold" type="submit" id="submitBtn">Send quote request</button>
+          <small>We usually reply within one business day.</small>
+        </div>
+        <p class="err full" id="sendErr" hidden></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="wholesale" id="wholesale" aria-labelledby="ws-h">
+    <div class="wrap">
+      <img src="images/jackets-row.jpg" alt="Finished embroidered jackets lined up on the work table" loading="lazy">
+      <div>
+        <p class="eyebrow">For shops and vendors</p>
+        <h2 id="ws-h">Wholesale hats for your store</h2>
+        <ul>
+          <li>Ready-to-sell embroidered hats, including local designs</li>
+          <li>Small opening order to test what sells</li>
+          <li>Weekly restocks delivered in the LA area</li>
+          <li>Custom designs with your shop's name available</li>
+        </ul>
+        <a class="btn btn-gold" href="#quote" data-service="Wholesale hats">Ask about wholesale</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="stitch" aria-hidden="true"></div>
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="mark">Millennial <span>Threadz</span></div>
+      <p style="margin-top:8px">Bellflower, CA · Pickup by appointment · Shipping available</p>
+    </div>
+    <nav aria-label="Social">
+      <a href="https://www.instagram.com/millennialthreadz" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.youtube.com/@millennialthreadz" target="_blank" rel="noopener">YouTube</a>
+      <a href="#quote">Get a quote</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+// Paste your Web3Forms access key here (free at web3forms.com; quotes are emailed to the address you sign up with).
+const WEB3FORMS_KEY = "890386f3-fff9-49de-b195-dc701a7d9bd8";
+
+(function () {
+  const form = document.getElementById("quoteForm");
+  const $ = (id) => document.getElementById(id);
+
+  // Buttons with data-service jump to the form with that item pre-checked.
+  document.querySelectorAll("[data-service]").forEach((el) => {
+    el.addEventListener("click", () => {
+      const box = form.querySelector('input[name="service"][value="' + el.dataset.service + '"]');
+      if (box) box.checked = true;
+      if (el.getAttribute("href") === "#wholesale") return;
+      setTimeout(() => $("name").focus({ preventScroll: true }), 400);
+    });
+  });
+
+  // ?service=wholesale in the link (e.g. from Instagram) pre-checks wholesale.
+  try {
+    const s = new URLSearchParams(location.search).get("service");
+    if (s && s.toLowerCase().startsWith("whole")) form.querySelector('input[value="Wholesale hats"]').checked = true;
+  } catch (e) {}
+
+  function showDone(preview) {
+    form.innerHTML = '<div class="done"><h3>Request sent</h3><p>Thanks! We\'ll get back to you with a price, usually within one business day. If you have a logo file, DM it to <a href="https://www.instagram.com/millennialthreadz" target="_blank" rel="noopener">@millennialthreadz</a>.</p>' +
+      (preview ? '<p class="opt">Preview mode: this request was not sent. Add your Web3Forms key and publish the site to receive real quotes.</p>' : '') + '</div>';
+    form.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    let ok = true;
+    ["name", "qty", "details"].forEach((id) => {
+      const el = $(id); const bad = !el.value.trim();
+      el.setAttribute("aria-invalid", bad); el.style.borderColor = bad ? "var(--error)" : "";
+      if (bad) ok = false;
+    });
+    const hasContact = $("phone").value.trim() || $("email").value.trim();
+    $("contactErr").hidden = !!hasContact; if (!hasContact) ok = false;
+    const services = [...form.querySelectorAll('input[name="service"]:checked')].map((b) => b.value);
+    $("serviceErr").hidden = services.length > 0; if (!services.length) ok = false;
+    if (!ok) { const first = form.querySelector('[aria-invalid="true"], .err:not([hidden])'); if (first) first.scrollIntoView({ block: "center" }); return; }
+
+    const data = Object.fromEntries(new FormData(form).entries());
+    if (data.botcheck) return;
+    data.service = services.join(", ");
+    const preview = WEB3FORMS_KEY.startsWith("PASTE") || /claude|anthropic/.test(location.hostname) || location.protocol === "file:";
+    if (preview) { showDone(true); return; }
+
+    const btn = $("submitBtn"); btn.disabled = true; btn.textContent = "Sending…"; $("sendErr").hidden = true;
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(Object.assign({
+          access_key: WEB3FORMS_KEY,
+          subject: "New quote request: " + data.name + (data.business ? " (" + data.business + ")" : ""),
+          from_name: "Millennial Threadz website",
+          replyto: data.email || undefined
+        }, data))
+      });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok || out.success === false) throw new Error(out.message || "Send failed");
+      showDone(false);
+    } catch (err) {
+      btn.disabled = false; btn.textContent = "Send quote request";
+      $("sendErr").textContent = "Your request didn't go through. Check your connection and try again, or DM us at @millennialthreadz.";
+      $("sendErr").hidden = false;
+    }
+  });
+})();
+</script>
+</body>
+</html>

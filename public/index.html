@@ -114,6 +114,8 @@ section { padding-block: 72px; }
 .about .facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
 .about .facts span { font: 500 12px/1 var(--f-mono); border: 1px solid var(--line); padding: 8px 10px; border-radius: 3px; color: var(--cream); }
 
+.video-frame { position: relative; aspect-ratio: 16/9; max-width: 900px; border-radius: 6px; overflow: hidden; border: 1px solid var(--line); background: var(--panel); }
+.video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .quote { background: var(--panel); border-block: 1px solid var(--line); }
 .quote .wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; }
 .quote aside { display: grid; gap: 16px; align-content: start; }
@@ -173,6 +175,7 @@ footer a:hover { color: var(--thread); }
       <a class="link" href="#work">Work</a>
       <a class="link" href="#services">Services</a>
       <a class="link" href="#about">About</a>
+      <a class="link" href="#featured">Featured</a>
       <a class="btn btn-gold" href="#quote">Get a quote</a>
     </nav>
   </div>
@@ -262,6 +265,19 @@ footer a:hover { color: var(--thread); }
         <p>Millennial Threadz started in 2020 with one goal: give local businesses, teams and brands merch they're proud to wear. We've stitched and printed for restaurants, auto shops, contractors, schools, softball teams, musicians, beverage brands and independent clothing labels across Southern California.</p>
         <p>Every piece is made in-house by the same person who answers your quote. Send us your logo and we'll handle the rest, from the design to the final stitch.</p>
         <div class="facts"><span>Est. 2020</span><span>Los Angeles, CA</span><span>Made in-house</span><span>Pickup or shipping</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured" id="featured" aria-labelledby="feat-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">As seen on Ricoma TV</p>
+        <h2 id="feat-h">Featured by Ricoma</h2>
+        <p>Ricoma, the company behind our embroidery machines, made a video about how Millennial Threadz grew from one machine to a full production setup.</p>
+      </div>
+      <div class="video-frame">
+        <iframe src="https://www.youtube-nocookie.com/embed/dbfeeXF-JXA" title="How Millennial Threadz grew, featured on Ricoma TV" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </section>

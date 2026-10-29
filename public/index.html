@@ -59,7 +59,7 @@ header .btn { padding: 10px 16px; font-size: 15px; }
 .hero .lede { color: var(--muted); max-width: 34em; font-size: 18px; }
 .hero .ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 .hero figure { margin: 0; position: relative; }
-.hero figure img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 6px; }
+.hero figure img, .hero figure video { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 6px; display: block; background: var(--panel); }
 .hero figcaption { position: absolute; left: 12px; bottom: 12px; background: rgba(15,14,12,.85); padding: 6px 10px; border-radius: 3px; font: 500 12px/1.3 var(--f-mono); color: var(--cream); letter-spacing: .04em; }
 
 .clients { border-block: 1px solid var(--line); background: var(--panel); }
@@ -151,7 +151,7 @@ footer a:hover { color: var(--thread); }
 
 @media (max-width: 900px) {
   .hero .wrap, .quote .wrap, .wholesale .wrap, .about .wrap { grid-template-columns: 1fr; }
-  .hero figure img, .about img { aspect-ratio: 4/3; }
+  .hero figure img, .hero figure video, .about img { aspect-ratio: 4/3; }
   .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -191,8 +191,8 @@ footer a:hover { color: var(--thread); }
         </div>
       </div>
       <figure>
-        <img src="images/work/utv-wrapz-jacket-hoop.jpg" alt="Large UTV Wrapz back design being embroidered on a jacket in the hoop">
-        <figcaption>On the machine: UTV Wrapz jacket back</figcaption>
+        <video src="images/hero-stitch.mp4" poster="images/work/utv-wrapz-jacket-hoop.jpg" autoplay muted loop playsinline aria-label="A large jacket back design being embroidered on the machine"></video>
+        <figcaption>On the machine right now</figcaption>
       </figure>
     </div>
   </div>
@@ -370,10 +370,21 @@ const WEB3FORMS_KEY = "890386f3-fff9-49de-b195-dc701a7d9bd8";
 
 // Gallery: [file, caption, category]  categories: hats, apparel, prints, extras
 const WORK = [
+  ["electrolit-miami-staff","Electrolit event staff uniforms","apparel"],
+  ["electrolit-jacket","Electrolit embroidered jacket","apparel"],
   ["utv-wrapz-jacket-hoop","UTV Wrapz jacket back","apparel"],
   ["lb-steak-hats-on-machine","LB Steak hats","hats"],
   ["chan-auto-body-set","Chan Truck & Auto Body set","prints"],
   ["24kt-patches-batch","24KT patches","extras"],
+  ["electrolit-vest-denim","Electrolit denim vest","apparel"],
+  ["electrolit-marathon-sign","Electrolit LA Marathon sign","extras"],
+  ["electrolit-sleeveless","Electrolit sleeveless top","apparel"],
+  ["electrolit-vest-tan","Electrolit knit vest","apparel"],
+  ["electrolit-shirt","Electrolit embroidered tee","apparel"],
+  ["electrolit-horn","Electrolit fan horn decal","extras"],
+  ["electrolit-asics-shirt","Electrolit performance shirt","prints"],
+  ["electrolit-vest-cream","Electrolit cream vest","apparel"],
+  ["electrolit-vest-cream-3","Electrolit vest","apparel"],
   ["leorachi-jacket","Leorachi bomber jacket","apparel"],
   ["quality-auto-hoodies","Quality Auto & custom car hoodies","apparel"],
   ["streetwear-banner","Streetwear sale banner","extras"],
